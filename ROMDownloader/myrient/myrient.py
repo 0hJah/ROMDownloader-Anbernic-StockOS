@@ -45,13 +45,10 @@ class Myrient:
     
     def download_rom(self, rom_url, rom_path):
         try:
-            context = ssl._create_unverified_context()
-            response = urlopen(rom_url, context=context)
-            with open(rom_path, "wb") as rom_file:
-                rom_file.write(response.read())
-            with zipfile.ZipFile(rom_path, 'r') as zip_ref:
+            ssl._create_default_https_context = ssl._create_unverified_context
+            rom_file, _ = urlretrieve(rom_url)
+            with zipfile.ZipFile(rom_file, "r") as zip_ref:
                 zip_ref.extractall(os.path.dirname(rom_path))
-            os.remove(rom_path)
             return True
         except:
             return False
