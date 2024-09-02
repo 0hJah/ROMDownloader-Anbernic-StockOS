@@ -14,9 +14,10 @@ ROMDownloader is a lightweight application designed to simplify the process of d
 
 ROMDownloader was tested on the following Anbernic devices:
 - RG40XX H
+- RG35XX H
 - RG35XXSP
 
-However, it could be compatible with any Anbernic handheld. Please, open an issue to confirm the compatibility or to report any problems.
+However, it could be compatible with any Anbernic handheld with a Python version >= 3.7. Please, open an issue to confirm the compatibility or to report any problems.
 
 ## Installation
 
